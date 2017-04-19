@@ -1,3 +1,5 @@
+https://hub.docker.com/r/tomekw/ada-gnat/
+
 # compile with my custom build-ada script (will likely need updates, /usr/bin/build_ada)
 build-ada {file}
 
@@ -29,67 +31,29 @@ Extreme Type Safety
 # Tools/Installation
 Originally its name was an acronym that stood for GNU NYU Ada Translator, but that name no longer applies.
 
-# MUST TELL THEM WHICH VERSION WE ARE RUNNING (Ada 2012?)
+Purpose
+- real-time applications running on embedded systems
+- was used heavily in the military, and still is for certain applications
 
-### The Hard Way (Build GCC from Source)
-- https://gcc.gnu.org/install/
+Program
+- "Real world gps consumer/reporter”
+- Interact with gps simulator
 
-### The Moderate Way
-Install MacPorts for OS X Version
-http://www.macports.org/install.php
+Setup Steps
+- install Docker
+- use Docker image to get a clean environment for running Ada toolchain
+    - mkdir ada
+    - cd ada
+    - mkdir src
+    - docker run -it -v $(pwd)/src:/app tomekw/ada-gnat
 
-Install GCC using MacPorts
-sudo port selfupdate
+Ada unique things
+- heavy use of contracts for safety
+- Task model
 
-
-Install GCC w/ Ada Support
-! sudo port install gnat-gcc
-
-sudo port install gcc49
-port select --list gcc
-sudo port select --set gcc mp-gcc49
-
-### The Easiest Way (Download Academic AdaCore)
-http://libre.adacore.com/tools/gnat-gpl-edition/
-
-# Program to Build
-
-# Build/Source
-
-# Links and Useful Resources
-- http://university.adacore.com/
-
-# Commands Ran to Run Environment
-// create build script
-sudo chmod 755 build-ada
-
-```shell
-#!/bin/bash
-
-DIR=`pwd`
-SRC=$1
-NAME=${SRC%*.adb}
-OBJ="$NAME.ali"
-
-if [ -z $SRC ]; then
-        ERR="Ada source not provided (use .adb)!";
-fi
-
-if [ -z $NAME ]; then
-        ERR="$ERR\nExtenstion .adb not found!";
-fi
-
-if [ -z $ERR ]; then
-        # echo "DIR equals $DIR"
-        # echo "SRC equals $SRC"
-        # echo "NAME equals $NAME"
-        # echo "OBJ equals $OBJ"
-        sudo ./gnatmake -i ~/Desktop/hello.adb -o ~/Desktop/hello
-        cd "/usr/gnat-gpl-bin/bin"
-        ./gnatmake -i "$DIR/$SRC" -o "$DIR/$NAME"
-        cd "$DIR"
-        rm "b~$NAME*"
-else
-        echo $ERR
-fi
-```
+Ada classifications
+- imperative language
+- strongly typed
+- concurrency is built into the language (tasks)
+- exception/error handling
+- has generics
