@@ -1,6 +1,0 @@
-CLS
-PRINT "Hello, world!"
-PRINT "I'm learning about commands in BASIC."
-PRINT "This text is being printed via the PRINT command."
-PRINT "Finally, I'll use EXIT."
-EXIT
