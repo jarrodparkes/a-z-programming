@@ -1,0 +1,4 @@
+% Makefile for Modula-3 program 'hello'
+import("libm3")
+implementation("Main")
+program("hello")
