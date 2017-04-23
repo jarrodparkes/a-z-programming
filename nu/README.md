@@ -2,7 +2,7 @@
 
 ```bash
 docker build -t jarrodparkes/nu:1.0.0 .
-docker run -it -v $(pwd)/src:/proj/src jarrodparkes/nu:1.0.0 /bin/bash
+docker run -it -v $(pwd)/src:/src jarrodparkes/nu:1.0.0 /bin/bash
 ```
 
 ```bash
