@@ -1,6 +1,6 @@
 FROM java:9
 
-MAINTAINER Jarrod Parkes <parkesfjarrod@gmail.com>
+LABEL maintainer="Jarrod Parkes parkesfjarrod@gmail.com"
 
 ENV PATH "$PATH:/x10-2.6.0_linux_x86_64/bin/"
 

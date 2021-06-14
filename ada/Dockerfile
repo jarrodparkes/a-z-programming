@@ -1,3 +1,3 @@
 FROM tomekw/ada-gnat
 
-MAINTAINER Jarrod Parkes <parkesfjarrod@gmail.com>
+LABEL maintainer="Jarrod Parkes parkesfjarrod@gmail.com"

@@ -1,3 +1,3 @@
 FROM golang:alpine
 
-MAINTAINER Jarrod Parkes <parkesfjarrod@gmail.com>
+LABEL maintainer="Jarrod Parkes parkesfjarrod@gmail.com"

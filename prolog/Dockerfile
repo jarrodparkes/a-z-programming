@@ -1,3 +1,3 @@
 FROM nacyot/prolog-swi:apt
 
-MAINTAINER Jarrod Parkes <parkesfjarrod@gmail.com>
+LABEL maintainer="Jarrod Parkes parkesfjarrod@gmail.com"

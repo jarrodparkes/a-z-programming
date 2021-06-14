@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Jarrod Parkes <parkesfjarrod@gmail.com>
+LABEL maintainer="Jarrod Parkes parkesfjarrod@gmail.com"
 
 RUN apt-get update; \
     apt-get install -y wget tar gcc; \

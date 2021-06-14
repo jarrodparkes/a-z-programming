@@ -1,6 +1,6 @@
 FROM alpine
 
-MAINTAINER Jarrod Parkes <parkesfjarrod@gmail.com>
+LABEL maintainer="Jarrod Parkes parkesfjarrod@gmail.com"
 
 RUN apk add --update zsh git; \
     mkdir src;
